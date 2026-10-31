@@ -182,7 +182,7 @@ function LeadForm({ onCreated }: { onCreated: () => void }) {
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!nome.trim()) return toast.error("Informe o nome");
+    if (!nome.trim()) { toast.error("Informe o nome"); return; }
     setSaving(true);
     const { error } = await supabase.from("leads").insert({
       nome: nome.trim(),
@@ -191,7 +191,7 @@ function LeadForm({ onCreated }: { onCreated: () => void }) {
       etapa,
     });
     setSaving(false);
-    if (error) return toast.error("Erro ao salvar: " + error.message);
+    if (error) { toast.error("Erro ao salvar: " + error.message); return; }
     toast.success("Lead adicionado");
     setNome(""); setEmpresa(""); setValor(""); setEtapa("Novo");
     onCreated();
