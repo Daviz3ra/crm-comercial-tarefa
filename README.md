@@ -1,26 +1,14 @@
-# Dealflow Garden Path
+### Diário
 
-"Crie um CRM Comercial completo com uma lista de leads e um formulário para adicionar novos registros. Conecte este projeto ao meu banco do Supabase externo. Eu preciso que cada card de lead exiba o nome, empresa, valor e tenha um seletor (dropdown ou botões) para mudar a etapa do lead entre 'Novo', 'Em contato' e 'Fechado'. Certifique-se de que tanto o formulário quanto o seletor atualizem as informações em tempo real na tabela 'leads' do Supabase."
+# O que aconteceu com a IA:
+- **O que a IA sugeriu:** O Lovable sugeriu criar uma estrutura completa dos cards na tela para listar os leads e fez o formulário de cadastro ligado ao banco de dados. No início, a IA também sugeriu criar um banco de dados fictício dentro do próprio Lovable para testar, e me guiou com os passos para realizar as conexões externas.
+- **O que eu aceitei:** Aceitei o design visual que ela gerou para a listagem e para o formulário. Também aceitei fazer a conexão com o meu projeto do Supabase para puxar os dados que eu já tinha cadastrado.
+- **O que eu recusei/alterei:** Recusei a sugestão inicial da IA de usar dados fictícios locais dela, e tive que insistir em conectar o meu banco externo do Supabase. Também tive que atualizar a página e refazer comandos porque o chat travou e os créditos gratuitos do lovable acabaram, me obrigando a reiniciar o processo em outra conta pra concluir todas as funcionalidades integradas.
 
-This project was built with [Lovable](https://lovable.dev).
+### Respostas da Avaliação
 
-**Live app**: https://dealflow-garden-path.lovable.app
+**1. Onde este dado fica guardado?**
+Os dados ficam guardados de forma permanente na nuvem, dentro das tabelas do meu projeto criado no Supabase, que utiliza como base o PostgreSQL. O Lovable funciona apenas como a vitrine visual que puxa e mostra esses dados (frontend).
 
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/dd5b5211-7251-4f57-90db-5b3840a787d3).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+**2. O que acontece se eu apagar esta linha no Supabase?**
+Se eu deletar uma linha direto pelo painel do Supabase, o dado é excluído de maneira definitiva. Como a tela do meu sistema depende do banco de dados para saber o que mostrar, na próxima vez que a página for atualizada, esse lead vai sumir, porque o site não vai mais encontrar essa informação para carregar.
